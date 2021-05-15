@@ -19,7 +19,7 @@ const Header = ({ currentTheme, themeToggle }) => {
       </a>
       <SettingsWrapper>
         <ThemeToggleDiv>
-          <ThemeToggleButton onClick={themeToggle}>
+          <ThemeToggleButton onClick={themeToggle} aria-label="Toggle Light/Dark Theme">
             <ThemeToggleSVG>
               {currentTheme === "light" ? (
                 <path
