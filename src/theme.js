@@ -1,6 +1,7 @@
 const lightTheme = {
   colors: {
     primary: "#7C5DFA",
+    primaryLight: "#9277FF",
     danger: "#EC5757",
   },
   backgrounds: {
@@ -54,6 +55,7 @@ const lightTheme = {
 const darkTheme = {
   colors: {
     primary: "#7C5DFA",
+    primaryLight: "#9277FF",
     danger: "#EC5757",
   },
   backgrounds: {
