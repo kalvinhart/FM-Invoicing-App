@@ -2,7 +2,6 @@ import { useState } from "react";
 import GlobalStyle from "./globalStyles";
 import { ThemeProvider } from "styled-components";
 import { themes } from "./theme";
-import "./App.css";
 
 function App() {
   const [theme, setTheme] = useState("light");
