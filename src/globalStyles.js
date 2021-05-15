@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: Spartan, sans-serif;
         font-size: 12px;
         line-spacing: 15px;
+        background-color: ${(props) => props.theme.backgrounds.body};
     }
 
     h1, h2, h3, h4 {

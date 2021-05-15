@@ -1,21 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GlobalStyle from "./globalStyles";
 import { ThemeProvider } from "styled-components";
 import { themes } from "./theme";
 
-function App() {
+import Header from "./components/shared/Header";
+
+const App = () => {
   const [theme, setTheme] = useState("light");
 
   const themeToggle = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", JSON.stringify(newTheme));
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("theme")) {
+      setTheme(JSON.parse(localStorage.getItem("theme")));
+    }
+  }, []);
 
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
-      <div className="App"></div>
+      <Header currentTheme={theme} themeToggle={themeToggle} />
     </ThemeProvider>
   );
-}
+};
 
 export default App;
