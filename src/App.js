@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
+// Styles
 import GlobalStyle from "./globalStyles";
 import { ThemeProvider } from "styled-components";
 import { themes } from "./theme";
-
+// Routing
+import { Switch, Route } from "react-router-dom";
+// Components
 import Header from "./components/shared/Header";
+import Home from "./components/Home/Home";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -24,6 +28,9 @@ const App = () => {
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
       <Header currentTheme={theme} themeToggle={themeToggle} />
+      <Switch>
+        <Route exact path="/" render={(routeProps) => <Home {...routeProps} />} />
+      </Switch>
     </ThemeProvider>
   );
 };
