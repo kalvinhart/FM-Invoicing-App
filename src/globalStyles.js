@@ -21,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h1, h2, h3, h4 {
-        margin-bottom: 10px;
         font-weight: bold;
     }
 
