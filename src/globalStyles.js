@@ -16,17 +16,22 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: Spartan, sans-serif;
         font-size: 12px;
-        line-spacing: 15px;
+        line-height: 15px;
         background-color: ${(props) => props.theme.backgrounds.body};
     }
 
     h1, h2, h3, h4 {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        font-weight: bold;
     }
 
     h1 {
-        font-size: 32px;
+        font-size: 22px;
         line-height: 36px;
+
+        @media only screen and (min-width: 768px) {
+            font-size: 32px;
+        }
     }
 
     h2 {
