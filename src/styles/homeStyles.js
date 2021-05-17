@@ -3,6 +3,7 @@ import styled from "styled-components";
 const HomePageHeader = styled.div`
   width: 100%;
   height: 44px;
+  margin-bottom: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,4 +65,23 @@ const PlusIcon = styled.svg`
   height: 10px;
 `;
 
-export { HomePageHeader, AddInvoiceButton, PlusIcon };
+// RESULTS===========================================================
+const EmptyResultsDiv = styled.div`
+  ${"" /* width: 100%; */}
+  padding: 40px 20px;
+  text-align: center;
+
+  & img {
+    margin-bottom: 20px;
+  }
+
+  & h2 {
+    margin-bottom: 10px;
+  }
+`;
+
+const EmptyImage = styled.img`
+  width: 242px;
+`;
+
+export { HomePageHeader, AddInvoiceButton, PlusIcon, EmptyResultsDiv, EmptyImage };

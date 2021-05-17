@@ -8,9 +8,12 @@ import { Switch, Route } from "react-router-dom";
 // Components
 import Header from "./components/shared/Header";
 import Home from "./components/Home/Home";
+// Context
+import InvoicesContext from "./store/InvoicesContext";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
+  const [data, setData] = useState([]);
 
   const themeToggle = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -27,10 +30,12 @@ const App = () => {
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
-      <Header currentTheme={theme} themeToggle={themeToggle} />
-      <Switch>
-        <Route exact path="/" render={(routeProps) => <Home {...routeProps} />} />
-      </Switch>
+      <InvoicesContext.Provider value={data}>
+        <Header currentTheme={theme} themeToggle={themeToggle} />
+        <Switch>
+          <Route exact path="/" render={(routeProps) => <Home {...routeProps} />} />
+        </Switch>
+      </InvoicesContext.Provider>
     </ThemeProvider>
   );
 };

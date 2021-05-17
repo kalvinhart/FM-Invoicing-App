@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 
-const Results = (props) => {
+const Results = ({ invoices }) => {
   return <div></div>;
 };
 
-Results.propTypes = {};
+Results.propTypes = {
+  invoices: PropTypes.array,
+};
 
 export default Results;
