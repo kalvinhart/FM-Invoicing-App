@@ -1,9 +1,4 @@
-import {
-  LogoWrapper,
-  LogoTopHalf,
-  LogoBottomHalf,
-  LogoSVG,
-} from "../../styles/headerStyles";
+import { LogoWrapper, LogoTopHalf, LogoBottomHalf, LogoSVG } from "./styles";
 
 const Logo = () => {
   return (

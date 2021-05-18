@@ -1,6 +1,6 @@
 import Header from "./Header";
 import { ThemeProvider } from "styled-components";
-import { themes } from "../../theme";
+import { themes } from "../../../theme";
 import { render, screen } from "@testing-library/react";
 
 describe("<Header/>", () => {

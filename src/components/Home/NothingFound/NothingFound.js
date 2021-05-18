@@ -1,4 +1,4 @@
-import { EmptyResultsDiv, EmptyImage } from "../../../styles/homeStyles";
+import { EmptyResultsDiv, EmptyImage } from "./NothingFound.styles";
 import EmptySVG from "../../../assets/illustration-empty.svg";
 import { H2, PSecondary } from "../../../styles/textStyles";
 

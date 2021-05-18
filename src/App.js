@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 // Styles
-import GlobalStyle from "./globalStyles";
+import GlobalStyle from "./styles/globalStyles";
 import { ThemeProvider } from "styled-components";
 import { themes } from "./theme";
 // Routing
 import { Switch, Route } from "react-router-dom";
 // Components
-import Header from "./components/shared/Header";
+import Header from "./components/shared/Header/Header";
 import Home from "./components/Home/Home";
 // Context
 import InvoicesContext from "./store/InvoicesContext";
@@ -25,6 +25,16 @@ const App = () => {
     if (localStorage.getItem("theme")) {
       setTheme(JSON.parse(localStorage.getItem("theme")));
     }
+  }, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      const result = await fetch("./data.json");
+      const invoiceData = await result.json();
+      if (invoiceData) setData(invoiceData);
+    };
+
+    getData();
   }, []);
 
   return (

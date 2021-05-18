@@ -7,9 +7,9 @@ import {
   ThemeToggleButton,
   ThemeToggleSVG,
   AvatarImg,
-} from "../../styles/headerStyles";
-import Logo from "./Logo";
-import Avatar from "../../assets/image-avatar.jpg";
+} from "./styles";
+import Logo from "../Logo/Logo";
+import Avatar from "../../../assets/image-avatar.jpg";
 
 const Header = ({ currentTheme, themeToggle }) => {
   return (

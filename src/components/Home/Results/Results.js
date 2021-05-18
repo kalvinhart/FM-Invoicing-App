@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
+import { ResultsDiv } from "./Results.styles";
 
 const Results = ({ invoices }) => {
-  return <div></div>;
+  return <ResultsDiv>{invoices}</ResultsDiv>;
 };
 
 Results.propTypes = {

@@ -1,4 +1,4 @@
-import { AddInvoiceButton, PlusIcon } from "../../../styles/homeStyles";
+import { AddInvoiceButton, PlusIcon } from "./NewInvoiceButton.styles";
 
 const NewInvoiceButton = () => {
   return (

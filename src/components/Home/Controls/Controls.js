@@ -1,5 +1,5 @@
-import DropDown from "./DropDown";
-import NewInvoiceButton from "./NewInvoiceButton";
+import DropDown from "../DropDown/DropDown";
+import NewInvoiceButton from "../NewInvoiceButton/NewInvoiceButton";
 
 const Filter = () => {
   return (
