@@ -13,6 +13,7 @@ const Header = styled.header`
   background-color: ${(props) => props.theme.backgrounds.header};
 
   @media only screen and (min-width: 1024px) {
+    position: fixed;
     width: 103px;
     height: 100vh;
     flex-direction: column;
