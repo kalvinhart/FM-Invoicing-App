@@ -11,7 +11,7 @@ import InvoiceItem from "./InvoiceItem/InvoiceItem";
 const Home = () => {
   const data = useContext(InvoicesContext);
   const invoices = data.map((inv) => (
-    <Link to={`/invoice/${inv.id}`}>
+    <Link to={`/invoice/${inv.id}`} key={inv.id}>
       <InvoiceItem data={inv} />
     </Link>
   ));

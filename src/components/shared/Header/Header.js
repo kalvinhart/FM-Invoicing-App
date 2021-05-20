@@ -7,7 +7,7 @@ import {
   ThemeToggleButton,
   ThemeToggleSVG,
   AvatarImg,
-} from "./styles";
+} from "./Header.styles";
 import Logo from "../Logo/Logo";
 import Avatar from "../../../assets/image-avatar.jpg";
 

@@ -1,6 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+
     * {
         vertical-align: baseline;
         font-weight: inherit;
@@ -12,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
 	}
+
+    html {
+        box-sizing: border-box;
+    }
 
     body {
         font-family: Spartan, sans-serif;
@@ -39,13 +49,21 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h3 {
-        font-size: 16px;
+        font-size: 12px;
         line-height: 24px;
+
+        @media only screen and (min-width: 768px) {
+            font-size: 16px;
+        }
     }
 
     h4 {
         font-size: 12px;
         line-height: 15px;
+    }
+
+    a {
+        text-decoration: none;
     }
 `;
 

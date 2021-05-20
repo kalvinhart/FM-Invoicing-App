@@ -38,9 +38,9 @@ const lightTheme = {
     },
   },
   status: {
-    paid: "#33D69F",
-    pending: "#FF8F00",
-    draft: "#373B53",
+    paid: "51, 214, 159",
+    pending: "255, 143, 0",
+    draft: "55, 59, 83",
   },
   form: {
     input: {
@@ -93,9 +93,9 @@ const darkTheme = {
     },
   },
   status: {
-    paid: "#33D69F",
-    pending: "#FF8F00",
-    draft: "#DFE3FA",
+    paid: "51, 214, 159",
+    pending: "255, 143, 0",
+    draft: "223, 227, 250",
   },
   form: {
     input: {

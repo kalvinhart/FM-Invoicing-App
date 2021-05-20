@@ -9,6 +9,10 @@ const H2 = styled.h2`
   color: ${(props) => props.theme.text.primary};
 `;
 
+const H3 = styled.h3`
+  color: ${(props) => props.theme.text.primary};
+`;
+
 const SpanSecondary = styled.span`
   color: ${(props) => props.theme.text.secondary};
 `;
@@ -17,4 +21,4 @@ const PSecondary = styled.p`
   color: ${(props) => props.theme.text.secondary};
 `;
 
-export { H1, H2, SpanSecondary, PSecondary };
+export { H1, H2, H3, SpanSecondary, PSecondary };
