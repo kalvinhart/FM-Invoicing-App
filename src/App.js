@@ -10,6 +10,8 @@ import Header from "./components/shared/Header/Header";
 import Home from "./components/Home/Home";
 // Context
 import InvoicesContext from "./store/InvoicesContext";
+//Utils
+import { getData } from "./utils/getData";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -28,13 +30,11 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const getData = async () => {
-      const result = await fetch("./data.json");
-      const invoiceData = await result.json();
+    const init = async () => {
+      const invoiceData = await getData();
       if (invoiceData) setData(invoiceData);
     };
-
-    getData();
+    init();
   }, []);
 
   return (
