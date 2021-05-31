@@ -1,7 +1,7 @@
 import DropDown from "../DropDown/DropDown";
 import NewInvoiceButton from "../NewInvoiceButton/NewInvoiceButton";
 
-const Filter = () => {
+const Controls = () => {
   return (
     <div>
       <DropDown />
@@ -10,4 +10,4 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+export default Controls;
