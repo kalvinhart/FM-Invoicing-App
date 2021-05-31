@@ -40,7 +40,7 @@ const App = () => {
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
-      <InvoicesContext.Provider value={data}>
+      <InvoicesContext.Provider value={{ data, setData }}>
         <Header currentTheme={theme} themeToggle={themeToggle} />
         <Switch>
           <Route exact path="/" render={(routeProps) => <Home {...routeProps} />} />

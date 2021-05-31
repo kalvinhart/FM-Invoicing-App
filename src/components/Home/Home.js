@@ -9,7 +9,7 @@ import NothingFound from "./NothingFound/NothingFound";
 import InvoiceItem from "./InvoiceItem/InvoiceItem";
 
 const Home = () => {
-  const data = useContext(InvoicesContext);
+  const { data } = useContext(InvoicesContext);
   const invoices = data.map((inv) => (
     <Link to={`/invoice/${inv.id}`} key={inv.id}>
       <InvoiceItem data={inv} />
