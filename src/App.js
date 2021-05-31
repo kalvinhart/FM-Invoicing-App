@@ -8,6 +8,7 @@ import { Switch, Route } from "react-router-dom";
 // Components
 import Header from "./components/shared/Header/Header";
 import Home from "./components/Home/Home";
+import Invoice from "./components/Invoice/Invoice";
 // Context
 import InvoicesContext from "./store/InvoicesContext";
 //Utils
@@ -44,6 +45,11 @@ const App = () => {
         <Header currentTheme={theme} themeToggle={themeToggle} />
         <Switch>
           <Route exact path="/" render={(routeProps) => <Home {...routeProps} />} />
+          <Route
+            exact
+            path="/invoice/:id"
+            render={(routeProps) => <Invoice {...routeProps} />}
+          />
         </Switch>
       </InvoicesContext.Provider>
     </ThemeProvider>
