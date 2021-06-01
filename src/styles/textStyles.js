@@ -17,8 +17,23 @@ const SpanSecondary = styled.span`
   color: ${(props) => props.theme.text.secondary};
 `;
 
+const SpanWhite = styled.span`
+  color: white;
+  font-size: 11px;
+`;
+
+const SpanLarge = styled.span`
+  font-size: 15px;
+  font-weight: 700;
+  color: ${(props) => props.theme.text.primary};
+`;
+
+const SpanLargeWhite = styled(SpanLarge)`
+  color: white;
+`;
+
 const PSecondary = styled.p`
   color: ${(props) => props.theme.text.secondary};
 `;
 
-export { H1, H2, H3, SpanSecondary, PSecondary };
+export { H1, H2, H3, SpanSecondary, SpanWhite, SpanLargeWhite, SpanLarge, PSecondary };

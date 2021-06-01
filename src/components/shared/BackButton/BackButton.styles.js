@@ -7,6 +7,7 @@ const GoBackButton = styled.button`
   color: ${(props) => props.theme.text.primary};
   font-weight: 700;
   cursor: pointer;
+  transition: all 0.2s;
 
   &:hover {
     color: ${(props) => props.theme.text.secondary};

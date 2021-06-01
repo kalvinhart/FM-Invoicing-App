@@ -71,6 +71,7 @@ const ThemeToggleSVG = styled.svg`
   width: 20px;
   height: 20px;
   fill: #7e88c3;
+  transition: fill 0.2s;
 `;
 
 const AvatarImg = styled.img`

@@ -3,17 +3,15 @@ import InvoicesContext from "../../store/InvoicesContext";
 import { getData } from "../../utils/getData";
 
 import { Container } from "../../styles/containerStyles";
-import { SpanSecondary } from "../../styles/textStyles";
-import { InvoiceStatusHeader } from "./Invoice.styles";
 import Loading from "../shared/Loading/Loading";
-import InvoiceStatus from "../shared/InvoiceStatus/InvoiceStatus";
+import InvoiceStatusHeader from "../Invoice/InvoiceStatusHeader/InvoiceStatusHeader";
+import InvoiceDetail from "./InvoiceDetail/InvoiceDetail";
 import BackButton from "../shared/BackButton/BackButton";
 
 const Invoice = ({ match, location, history }) => {
   const [loading, setLoading] = useState(true);
   const { id } = match.params;
   const { data, setData } = useContext(InvoicesContext);
-  let invoice = [{ status: "pending" }];
 
   useEffect(() => {
     const checkForData = async () => {
@@ -32,19 +30,23 @@ const Invoice = ({ match, location, history }) => {
     checkForData();
   }, [data, setData]);
 
-  invoice = data.filter((inv) => inv.id === id);
+  const invoiceData = data.filter((inv) => inv.id === id);
+  const [invoice] = invoiceData;
+
+  const dummyFunc = () => true;
 
   return (
     <main>
       <Container>
         <BackButton onClick={history.goBack} />
+
         {loading ? (
           <Loading />
         ) : (
-          <InvoiceStatusHeader>
-            <SpanSecondary>Status</SpanSecondary>
-            <InvoiceStatus status={invoice[0].status} />
-          </InvoiceStatusHeader>
+          <>
+            <InvoiceStatusHeader invoice={invoice} func={dummyFunc} />
+            <InvoiceDetail invoice={invoice}></InvoiceDetail>
+          </>
         )}
       </Container>
     </main>
