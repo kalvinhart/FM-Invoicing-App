@@ -12,6 +12,7 @@ const InvoiceItemWrapper = styled.div`
   background-color: ${(props) => props.theme.backgrounds.main};
   border: 1px solid transparent;
   border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.05);
 
   &:hover {
     border: 1px solid ${(props) => props.theme.colors.primary};

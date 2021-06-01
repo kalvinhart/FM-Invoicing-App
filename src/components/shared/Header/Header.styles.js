@@ -6,9 +6,11 @@ const Header = styled.header`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.05);
 
   background-color: ${(props) => props.theme.backgrounds.header};
 

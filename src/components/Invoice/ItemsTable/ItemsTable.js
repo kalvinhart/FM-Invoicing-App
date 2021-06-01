@@ -5,8 +5,8 @@ import { Table } from "./ItemsTable.styles";
 const ItemsTable = ({ items }) => {
   return (
     <Table>
-      <thead>
-        <tr className="mobile-hidden">
+      <thead className="mobile-hidden">
+        <tr className="color-secondary">
           <th className="left">Item Name</th>
           <th className="center">QTY.</th>
           <th className="right">Price</th>
@@ -23,8 +23,10 @@ const ItemsTable = ({ items }) => {
               >
                 {item.name}
               </td>
-              <td className="center mobile-hidden">{item.quantity}</td>
-              <td className="right mobile-hidden">{`£ ${item.price.toFixed(2)}`}</td>
+              <td className="center mobile-hidden color-secondary">{item.quantity}</td>
+              <td className="right mobile-hidden color-secondary">{`£ ${item.price.toFixed(
+                2
+              )}`}</td>
               <td className="right">{`£ ${item.total.toFixed(2)}`}</td>
             </tr>
           );
