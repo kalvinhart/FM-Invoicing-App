@@ -3,7 +3,7 @@ import InvoicesContext from "../../../store/InvoicesContext";
 import { H1, SpanSecondary } from "../../../styles/textStyles";
 
 const Title = () => {
-  const data = useContext(InvoicesContext);
+  const { data } = useContext(InvoicesContext);
   return (
     <div>
       <H1>Invoices</H1>
