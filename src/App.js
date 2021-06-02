@@ -13,6 +13,8 @@ import Invoice from "./components/Invoice/Invoice";
 import InvoicesContext from "./store/InvoicesContext";
 //Utils
 import { getData } from "./utils/getData";
+// firebase
+import firebase from "./firebase/firebase";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -31,9 +33,16 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const init = async () => {
-      const invoiceData = await getData();
-      if (invoiceData) setData(invoiceData);
+    const init = () => {
+      const query = firebase.firestore().collection("invoices");
+
+      query.get().then((snapshot) => {
+        let allData = [];
+        snapshot.forEach((doc) => {
+          allData.push(doc.data());
+        });
+        setData(allData);
+      });
     };
     init();
   }, []);
