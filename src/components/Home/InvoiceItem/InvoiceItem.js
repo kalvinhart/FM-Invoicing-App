@@ -8,7 +8,6 @@ import InvoiceID from "../../shared/InvoiceID/InvoiceID";
 import InvoiceStatus from "../../shared/InvoiceStatus/InvoiceStatus";
 
 const InvoiceItem = ({ data }) => {
-  console.log(data);
   return (
     <InvoiceItemWrapper>
       <InvoiceID>{data.id}</InvoiceID>

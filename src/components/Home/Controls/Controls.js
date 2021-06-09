@@ -1,12 +1,13 @@
-import DropDown from "../DropDown/DropDown";
+import { ControlsWrapper } from "./Controls.styles";
+import Filter from "../Filter/Filter";
 import NewInvoiceButton from "../NewInvoiceButton/NewInvoiceButton";
 
 const Controls = () => {
   return (
-    <div>
-      <DropDown />
+    <ControlsWrapper>
+      <Filter />
       <NewInvoiceButton />
-    </div>
+    </ControlsWrapper>
   );
 };
 

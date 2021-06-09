@@ -6,6 +6,7 @@ import { themes } from "./theme";
 // Routing
 import { Switch, Route } from "react-router-dom";
 // Components
+import Loading from "./components/shared/Loading/Loading";
 import Header from "./components/shared/Header/Header";
 import Home from "./components/Home/Home";
 import Invoice from "./components/Invoice/Invoice";
@@ -13,10 +14,9 @@ import Invoice from "./components/Invoice/Invoice";
 import InvoicesContext from "./store/InvoicesContext";
 //Utils
 import { getData } from "./utils/getData";
-// firebase
-import firebase from "./firebase/firebase";
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState("light");
   const [data, setData] = useState([]);
 
@@ -33,33 +33,38 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const init = () => {
-      const query = firebase.firestore().collection("invoices");
-
-      query.get().then((snapshot) => {
-        let allData = [];
-        snapshot.forEach((doc) => {
-          allData.push(doc.data());
-        });
-        setData(allData);
-      });
+    const init = async () => {
+      if (data.length === 0) {
+        try {
+          const allData = await getData();
+          setData(allData);
+          setLoading(false);
+        } catch (e) {
+          console.log(e.message);
+        }
+      }
     };
+
     init();
-  }, []);
+  }, [data]);
 
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
       <InvoicesContext.Provider value={{ data, setData }}>
         <Header currentTheme={theme} themeToggle={themeToggle} />
-        <Switch>
-          <Route exact path="/" render={(routeProps) => <Home {...routeProps} />} />
-          <Route
-            exact
-            path="/invoice/:id"
-            render={(routeProps) => <Invoice {...routeProps} />}
-          />
-        </Switch>
+        {loading ? (
+          <Loading />
+        ) : (
+          <Switch>
+            <Route exact path="/" render={(routeProps) => <Home {...routeProps} />} />
+            <Route
+              exact
+              path="/invoice/:id"
+              render={(routeProps) => <Invoice {...routeProps} />}
+            />
+          </Switch>
+        )}
       </InvoicesContext.Provider>
     </ThemeProvider>
   );

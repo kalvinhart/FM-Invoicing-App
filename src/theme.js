@@ -7,6 +7,7 @@ const lightTheme = {
   backgrounds: {
     body: "#F8F8FB",
     header: "#373B53",
+    filter: "#FFFFFF",
     invoiceItems: "#F9FAFE",
     invoiceTotal: "#373B53",
     main: "#FFFFFF",
@@ -49,6 +50,9 @@ const lightTheme = {
       border: "#DFE3FA",
       focus: "#7C5DFA",
     },
+    checkbox: {
+      background: "#DFE3FA",
+    },
   },
 };
 
@@ -62,6 +66,7 @@ const darkTheme = {
     body: "#141625",
     header: "#1E2139",
     invoiceItems: "#252945",
+    filter: "#252945",
     invoiceTotal: "#0C0E16",
     main: "#1E2139",
   },
@@ -104,6 +109,9 @@ const darkTheme = {
       border: "#252945",
       focus: "#7C5DFA",
       danger: "#EC5757",
+    },
+    checkbox: {
+      background: "#DFE3FA",
     },
   },
 };

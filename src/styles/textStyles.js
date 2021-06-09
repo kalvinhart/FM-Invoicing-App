@@ -13,6 +13,10 @@ const H3 = styled.h3`
   color: ${(props) => props.theme.text.primary};
 `;
 
+const SpanPrimary = styled.span`
+  color: ${(props) => props.theme.text.primary};
+`;
+
 const SpanSecondary = styled.span`
   color: ${(props) => props.theme.text.secondary};
 `;
@@ -36,4 +40,14 @@ const PSecondary = styled.p`
   color: ${(props) => props.theme.text.secondary};
 `;
 
-export { H1, H2, H3, SpanSecondary, SpanWhite, SpanLargeWhite, SpanLarge, PSecondary };
+export {
+  H1,
+  H2,
+  H3,
+  SpanPrimary,
+  SpanSecondary,
+  SpanWhite,
+  SpanLargeWhite,
+  SpanLarge,
+  PSecondary,
+};
