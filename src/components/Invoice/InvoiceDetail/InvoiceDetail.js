@@ -30,9 +30,6 @@ const InvoiceDetail = ({ invoice }) => {
     id,
     items,
     paymentDue,
-    paymentTerms,
-    senderAddress,
-    status,
     total,
   } = invoice;
 
