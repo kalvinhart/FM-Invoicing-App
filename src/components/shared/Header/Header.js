@@ -51,6 +51,7 @@ const Header = ({ currentTheme, themeToggle }) => {
 };
 
 Header.propTypes = {
+  currentTheme: PropTypes.string.isRequired,
   themeToggle: PropTypes.func.isRequired,
 };
 
