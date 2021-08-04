@@ -15,12 +15,9 @@ const Home = () => {
   const [invoiceData, setInvoiceData] = useState([]);
 
   useEffect(() => {
-    const activeFiltersWithNull = filters.map((filter) => {
-      if (filter.checked) {
-        return filter.label.toLowerCase();
-      }
-      return null;
-    });
+    const activeFiltersWithNull = filters.map((filter) =>
+      filter.checked ? filter.label.toLowerCase() : null
+    );
 
     const activeFilters = activeFiltersWithNull.filter((item) => item !== null);
 
