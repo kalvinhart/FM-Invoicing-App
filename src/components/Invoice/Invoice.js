@@ -44,7 +44,7 @@ const Invoice = ({ match, location, history }) => {
           <Loading />
         ) : (
           <>
-            <InvoiceStatusHeader invoice={invoice} func={dummyFunc} />
+            <InvoiceStatusHeader status={invoice.status} func={dummyFunc} />
             <InvoiceDetail invoice={invoice}></InvoiceDetail>
           </>
         )}
