@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import InvoicesContext from "../../store/InvoicesContext";
 import { getData } from "../../utils/getData";
 
@@ -8,10 +9,11 @@ import InvoiceStatusHeader from "../Invoice/InvoiceStatusHeader/InvoiceStatusHea
 import InvoiceDetail from "./InvoiceDetail/InvoiceDetail";
 import BackButton from "../shared/BackButton/BackButton";
 
-const Invoice = ({ match, location, history }) => {
+const Invoice = ({ match }) => {
   const [loading, setLoading] = useState(true);
   const { id } = match.params;
   const { data, setData } = useContext(InvoicesContext);
+  const history = useHistory();
 
   useEffect(() => {
     const checkForData = async () => {
@@ -38,7 +40,7 @@ const Invoice = ({ match, location, history }) => {
   return (
     <main>
       <Container>
-        <BackButton onClick={history.goBack} />
+        <BackButton click={history.goBack} />
 
         {loading ? (
           <Loading />

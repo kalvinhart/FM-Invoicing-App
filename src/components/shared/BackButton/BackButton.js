@@ -3,17 +3,17 @@ import PropTypes from "react";
 import { GoBackButton } from "./BackButton.styles";
 import LeftArrow from "../../../assets/icon-arrow-left.svg";
 
-const BackButton = (props) => {
+const BackButton = ({ click }) => {
   return (
-    <GoBackButton onClick={props.onClick}>
-      <img src={LeftArrow} alt="" />
+    <GoBackButton onClick={click}>
+      <img src={LeftArrow} alt="" aria-hidden="true" />
       <span>Go Back</span>
     </GoBackButton>
   );
 };
 
 BackButton.propTypes = {
-  onClick: PropTypes.func,
+  click: PropTypes.func,
 };
 
 export default BackButton;
