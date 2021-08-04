@@ -12,6 +12,7 @@ import Home from "./components/Home/Home";
 import Invoice from "./components/Invoice/Invoice";
 // Context
 import InvoicesContext from "./store/InvoicesContext";
+import { FiltersProvider } from "./store/FiltersContext";
 //Utils
 import { getData } from "./utils/getData";
 
@@ -41,6 +42,7 @@ const App = () => {
           setLoading(false);
         } catch (e) {
           console.log(e.message);
+          setLoading(false);
         }
       }
     };
@@ -52,19 +54,21 @@ const App = () => {
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
       <InvoicesContext.Provider value={{ data, setData }}>
-        <Header currentTheme={theme} themeToggle={themeToggle} />
-        {loading ? (
-          <Loading />
-        ) : (
-          <Switch>
-            <Route exact path="/" render={(routeProps) => <Home {...routeProps} />} />
-            <Route
-              exact
-              path="/invoice/:id"
-              render={(routeProps) => <Invoice {...routeProps} />}
-            />
-          </Switch>
-        )}
+        <FiltersProvider>
+          <Header currentTheme={theme} themeToggle={themeToggle} />
+          {loading ? (
+            <Loading />
+          ) : (
+            <Switch>
+              <Route exact path="/" render={(routeProps) => <Home {...routeProps} />} />
+              <Route
+                exact
+                path="/invoice/:id"
+                render={(routeProps) => <Invoice {...routeProps} />}
+              />
+            </Switch>
+          )}
+        </FiltersProvider>
       </InvoicesContext.Provider>
     </ThemeProvider>
   );

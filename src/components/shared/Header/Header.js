@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import {
   Header as SCHeader,
   SettingsWrapper,
@@ -14,9 +15,9 @@ import Avatar from "../../../assets/image-avatar.jpg";
 const Header = ({ currentTheme, themeToggle }) => {
   return (
     <SCHeader data-testid="header">
-      <a href="/">
+      <Link to="/">
         <Logo />
-      </a>
+      </Link>
       <SettingsWrapper>
         <ThemeToggleDiv>
           <ThemeToggleButton

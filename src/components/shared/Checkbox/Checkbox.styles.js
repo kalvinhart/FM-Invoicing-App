@@ -15,6 +15,7 @@ const CheckboxSpan = styled.span`
   background-color: ${(props) => props.theme.form.checkbox.background};
   border: 1px solid transparent;
   border-radius: 2px;
+  transition: all 0.2s ease;
 
   & img {
     display: none;

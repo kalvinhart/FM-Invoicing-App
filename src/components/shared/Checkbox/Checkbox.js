@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
+import { FiltersContext } from "../../../store/FiltersContext";
 import {
   CheckboxWrapper,
   CheckboxLabel,
@@ -9,11 +10,23 @@ import {
 import { SpanPrimary } from "../../../styles/textStyles";
 import CheckSVG from "../../../assets/icon-check.svg";
 
-const Checkbox = ({ text }) => {
+const Checkbox = ({ checked = false, text }) => {
+  const { filters, setFilters } = useContext(FiltersContext);
+
+  const handleChange = () => {
+    const newFilters = filters.map((filter) => {
+      if (filter.label === text) {
+        return { ...filter, checked: !checked };
+      }
+      return filter;
+    });
+    setFilters(newFilters);
+  };
+
   return (
     <CheckboxWrapper>
       <CheckboxLabel>
-        <CheckboxInput type="checkbox" />
+        <CheckboxInput type="checkbox" onChange={handleChange} checked={checked} />
         <CheckboxSpan>
           <img src={CheckSVG} alt="" aria-hidden="true" />
         </CheckboxSpan>
@@ -24,7 +37,7 @@ const Checkbox = ({ text }) => {
 };
 
 Checkbox.propTypes = {
-  label: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default Checkbox;

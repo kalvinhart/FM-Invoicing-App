@@ -1,3 +1,7 @@
 export const config = {
-  filters: [{ label: "Draft" }, { label: "Pending" }, { label: "Paid" }],
+  filters: [
+    { label: "Draft", checked: false },
+    { label: "Pending", checked: false },
+    { label: "Paid", checked: false },
+  ],
 };

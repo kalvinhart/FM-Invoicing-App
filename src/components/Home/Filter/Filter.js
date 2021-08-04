@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { FiltersContext } from "../../../store/FiltersContext";
 import PropTypes from "prop-types";
-import { config } from "../../../config/config";
 
 import {
   FilterWrapper,
@@ -11,27 +11,34 @@ import {
 import DownArrow from "../../../assets/icon-arrow-down.svg";
 import Checkbox from "../../shared/Checkbox/Checkbox";
 
-const FilterBox = ({ filters }) => {
-  const filterOptions = filters.map((filter) => <Checkbox text={filter.label} />);
+const FilterBox = ({ filterList }) => {
+  const filterOptions = filterList.map((filter, i) => {
+    return <Checkbox key={filter.label} checked={filter.checked} text={filter.label} />;
+  });
 
   return <FilterBoxWrapper>{filterOptions}</FilterBoxWrapper>;
 };
 
 const Filter = () => {
   const [showFilters, setShowFilters] = useState(false);
+  const { filters } = useContext(FiltersContext);
+
+  const handleClick = () => {
+    setShowFilters(!showFilters);
+  };
 
   return (
     <FilterWrapper>
-      <FilterButton onClick={() => setShowFilters(!showFilters)}>
+      <FilterButton onClick={handleClick}>
         <ArrowImage flipArrow={showFilters} src={DownArrow} alt="" />
       </FilterButton>
-      {showFilters && <FilterBox filters={config.filters} />}
+      {showFilters && <FilterBox filterList={filters} />}
     </FilterWrapper>
   );
 };
 
 FilterBox.propTypes = {
-  filters: PropTypes.array.isRequired,
+  filterList: PropTypes.array.isRequired,
 };
 
 export default Filter;
